@@ -1,0 +1,25 @@
+package com.techzn.main.repository;
+
+import org.hibernate.Session;
+
+import com.techzn.main.config.HibernateConfig;
+
+import hibernateEntities.User;
+
+public class DbOperationsImpl implements DbOpretions{
+	@Override
+	public User getUserDetails(long id)
+	{
+        try(
+        		Session session = HibernateConfig.getSessionFactory().openSession();
+        	)
+        {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return null;
+	}
+
+}

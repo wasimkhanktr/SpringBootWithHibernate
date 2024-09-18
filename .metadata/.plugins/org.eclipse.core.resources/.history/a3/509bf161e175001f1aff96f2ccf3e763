@@ -1,0 +1,27 @@
+package com.techzn.main;
+
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+import com.techzn.main.repository.DbOperationsImpl;
+import com.techzn.main.repository.DbOpretions;
+
+import hibernateEntities.User;
+
+@SpringBootApplication
+public class TechznApplication {
+
+    public static void main(String[] args) {
+        
+    	ApplicationContext context = SpringApplication.run(TechznApplication.class, args);
+        
+    	context.getBean(DbOpretions.class);
+    }
+}

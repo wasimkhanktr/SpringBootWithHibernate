@@ -1,0 +1,5 @@
+package hibernateEntities;
+
+public class User {
+
+}

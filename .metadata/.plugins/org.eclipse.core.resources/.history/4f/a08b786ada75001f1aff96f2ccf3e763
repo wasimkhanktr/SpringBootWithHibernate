@@ -1,0 +1,5 @@
+package com.techzn.main.config;
+
+public class HibernateConfig {
+
+}

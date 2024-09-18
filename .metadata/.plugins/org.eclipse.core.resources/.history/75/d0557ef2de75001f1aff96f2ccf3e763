@@ -1,0 +1,9 @@
+package com.techzn.main.repository;
+
+import org.hibernate.SessionFactory;
+
+
+public interface DbOpretions {
+	 public SessionFactory getUserDetails(long id);
+
+}

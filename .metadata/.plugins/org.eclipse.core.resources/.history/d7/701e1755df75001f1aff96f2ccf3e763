@@ -1,0 +1,23 @@
+package com.techzn.main;
+
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import hibernateEntities.User;
+
+@SpringBootApplication
+public class TechznApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(TechznApplication.class, args);
+        
+
+		
+    }
+}

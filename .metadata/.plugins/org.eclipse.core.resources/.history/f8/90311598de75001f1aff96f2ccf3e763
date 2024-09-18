@@ -1,0 +1,12 @@
+package com.techzn.main.repository;
+
+import hibernateEntities.User;
+
+public class DbOperationsImpl implements DbOpretions{
+	@Override
+	public User getUserDetails(long id)
+	{
+		return null;
+	}
+
+}

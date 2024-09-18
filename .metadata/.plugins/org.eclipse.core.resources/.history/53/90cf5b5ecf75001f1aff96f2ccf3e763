@@ -1,0 +1,56 @@
+package com.techzn.main;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import hibernateEntities.User;
+
+@SpringBootApplication
+public class TechznApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(TechznApplication.class, args);
+        
+        // Manually creating a Hibernate SessionFactory
+        Configuration cfg = new Configuration();
+        cfg.configure("config/hibernate.cfg.xml");  // Ensure the path is correct to hibernate.cfg.xml
+        
+        // Build the SessionFactory
+        SessionFactory sessionFactory = cfg.buildSessionFactory();
+        
+        // Open a session
+        Session session = sessionFactory.openSession();
+        
+        // Begin a transaction
+        Transaction transaction = session.beginTransaction();
+        
+        try {
+            // Create a new User object
+            User user = new User();
+            user.setName("Wasim");
+            user.setEmail("wasimkhanktr@gmail.com");
+            user.setPassword("123");
+            user.setCity("Katihar");
+            
+            // Save the user object to the database
+            session.save(user);
+            
+            // Commit the transaction
+            transaction.commit();
+            System.out.println("User saved successfully!");
+            
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();  // Rollback in case of an error
+            }
+            e.printStackTrace();
+        } finally {
+            // Close the session
+            session.close();
+        }
+    }
+}

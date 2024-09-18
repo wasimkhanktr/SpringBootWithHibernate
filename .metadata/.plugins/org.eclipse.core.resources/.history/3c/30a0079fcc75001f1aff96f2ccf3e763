@@ -1,0 +1,29 @@
+package com.techzn.main;
+
+import org.hibernate.cfg.Configuration;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import hibernateEntities.User;
+
+@SpringBootApplication
+public class TechznApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TechznApplication.class, args);
+		
+		User user = new User();
+        user.setName("Wasim");
+        user.setEmail("wasimkhanktr@gmail.com");
+        user.setPassword("123");
+        user.setCity("Katihar");
+        
+     // Load configuration and build session factory
+        Configuration cfg = new Configuration();
+        cfg.configure("/com/techzn/config/hibernate.cfg.xml");  // Ensure the path is correct
+        
+        System.out.println(user.getName()+" "+user.getCity());
+		
+	}
+
+}

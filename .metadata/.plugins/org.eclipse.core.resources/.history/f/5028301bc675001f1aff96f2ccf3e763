@@ -1,0 +1,5 @@
+package com.techzn.main.entities;
+
+public class User {
+
+}
